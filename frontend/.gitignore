@@ -1,7 +1,3 @@
-target/
-
-.DS_Store
-
 # dependencies (bun install)
 node_modules
 
