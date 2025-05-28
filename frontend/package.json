@@ -4,6 +4,6 @@
     "tailwindcss": "^4.1.7"
   },
   "scripts": {
-    "tailwind:watch": "bunx @tailwindcss/cli -i ./public/css/pre_main.css -o ./public/css/main.css --watch"
+    "tailwind:watch": "bunx @tailwindcss/cli -i ./public/styles/pre_globals.css -o ./public/styles/globals.css --watch"
   }
 }
