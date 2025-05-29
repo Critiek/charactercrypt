@@ -1,5 +1,6 @@
 <script>
     let open = false;
+    import { Skull } from "@lucide/svelte";
 </script>
 
 <nav
@@ -8,11 +9,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <!-- Logo -->
-            <div
+            <h1
                 class="flex-shrink-0 flex items-center text-xl font-bold text-indigo-600 dark:text-indigo-400"
             >
                 MySite
-            </div>
+            </h1>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
@@ -24,7 +25,7 @@
                 <a
                     href="/about"
                     class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
-                    >About</a
+                    ><Skull /></a
                 >
                 <a
                     href="/contact"
