@@ -1,6 +1,6 @@
 <script>
     let open = false;
-    import { Skull } from "@lucide/svelte";
+    import { FileStack } from "@lucide/svelte";
 </script>
 
 <nav
@@ -12,20 +12,20 @@
             <h1
                 class="flex-shrink-0 flex items-center text-xl font-bold text-indigo-600 dark:text-indigo-400"
             >
-                MySite
+                CharacterCrypt
             </h1>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-4">
+            <div class="hidden md:flex space-x-6">
                 <a
                     href="/"
                     class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
                     >Home</a
                 >
                 <a
-                    href="/about"
+                    href="/characters"
                     class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
-                    ><Skull /></a
+                    >Characters<FileStack/></a
                 >
                 <a
                     href="/contact"
