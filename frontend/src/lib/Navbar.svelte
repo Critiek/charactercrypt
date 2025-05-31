@@ -1,16 +1,14 @@
 <script>
     let open = false;
-    import { FileStack } from "@lucide/svelte";
+    import { FileStack, AlignJustify, X } from "@lucide/svelte";
 </script>
 
-<nav
-    class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700"
->
+<nav>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <!-- Logo -->
             <h1
-                class="flex-shrink-0 flex items-center text-xl font-bold text-indigo-600 dark:text-indigo-400"
+                class="flex-shrink-0 flex items-center text-4xl font-bold dark:text-purple-400"
             >
                 CharacterCrypt
             </h1>
@@ -19,28 +17,33 @@
             <div class="hidden md:flex space-x-6">
                 <a
                     href="/"
-                    class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
                     >Home</a
                 >
                 <a
                     href="/characters"
-                    class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
-                    >Characters<FileStack/></a
+                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                    >Characters<FileStack /></a
                 >
                 <a
-                    href="/contact"
-                    class="text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                    href="#"
+                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
                     >Contact</a
                 >
             </div>
 
             <!-- Mobile Menu Button -->
             <button
-                class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none"
+                class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
                 on:click={() => (open = !open)}
                 aria-label="Toggle menu"
             >
-                <svg
+                {#if !open}
+                    <AlignJustify/>
+                {:else if open}
+                    <X/>
+                {/if}
+                <!-- <svg
                     class="h-6 w-6"
                     fill="none"
                     stroke="currentColor"
@@ -54,7 +57,7 @@
                             ? "M6 18L18 6M6 6l12 12"
                             : "M4 6h16M4 12h16M4 18h16"}
                     />
-                </svg>
+                </svg> -->
             </button>
         </div>
     </div>
@@ -64,17 +67,17 @@
         <div class="md:hidden px-4 pb-4 space-y-2">
             <a
                 href="/"
-                class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
                 >Home</a
             >
             <a
                 href="/about"
-                class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
                 >About</a
             >
             <a
                 href="/contact"
-                class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
                 >Contact</a
             >
         </div>
