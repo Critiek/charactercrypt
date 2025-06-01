@@ -17,17 +17,17 @@
             <div class="hidden md:flex space-x-6">
                 <a
                     href="/"
-                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
                     >Home</a
                 >
                 <a
                     href="/characters"
-                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
                     >Characters<FileStack /></a
                 >
                 <a
                     href="#"
-                    class="text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
                     >Contact</a
                 >
             </div>
@@ -67,17 +67,17 @@
         <div class="md:hidden px-4 pb-4 space-y-2">
             <a
                 href="/"
-                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
                 >Home</a
             >
             <a
                 href="/about"
-                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
                 >About</a
             >
             <a
                 href="/contact"
-                class="block text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
                 >Contact</a
             >
         </div>
