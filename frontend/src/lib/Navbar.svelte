@@ -7,41 +7,30 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <!-- Logo -->
-            <h1
-                class="flex-shrink-0 flex items-center text-4xl font-bold dark:text-purple-400"
+            <a
+                class="flex-shrink-0 flex items-center text-4xl font-bold text-purple-700 dark:text-purple-400"
+                href="/"
             >
                 CharacterCrypt
-            </h1>
+            </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6">
-                <a
-                    href="/"
-                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                    >Home</a
-                >
-                <a
-                    href="/characters"
-                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                    >Characters<FileStack /></a
-                >
-                <a
-                    href="#"
-                    class="text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                    >Contact</a
+                <a href="/characters" class="hover:text-purple-400"
+                    ><FileStack class="inline-flex" /></a
                 >
             </div>
 
             <!-- Mobile Menu Button -->
             <button
-                class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none"
+                class="md:hidden focus:outline-none"
                 on:click={() => (open = !open)}
                 aria-label="Toggle menu"
             >
                 {#if !open}
-                    <AlignJustify/>
+                    <AlignJustify />
                 {:else if open}
-                    <X/>
+                    <X />
                 {/if}
                 <!-- <svg
                     class="h-6 w-6"
@@ -65,21 +54,9 @@
     <!-- Mobile Menu -->
     {#if open}
         <div class="md:hidden px-4 pb-4 space-y-2">
-            <a
-                href="/"
-                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                >Home</a
-            >
-            <a
-                href="/about"
-                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                >About</a
-            >
-            <a
-                href="/contact"
-                class="block text-gray-700 dark:text-gray-200 hover:text-purple-400"
-                >Contact</a
-            >
+            <a href="/" class="block hover:text-purple-400">Home</a>
+            <a href="/about" class="block hover:text-purple-400">About</a>
+            <a href="/contact" class="block hover:text-purple-400">Contact</a>
         </div>
     {/if}
 </nav>
