@@ -1,6 +1,12 @@
 <script>
     let open = false;
-    import { FileStack, AlignJustify, X } from "@lucide/svelte";
+    import {
+        Files,
+        AlignJustify,
+        X,
+        CircleUserRound,
+        PencilRuler,
+    } from "@lucide/svelte";
 </script>
 
 <nav>
@@ -16,8 +22,16 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6">
-                <a href="/characters" class="hover:text-purple-400"
-                    ><FileStack class="inline-flex" /></a
+                <a
+                    href="/characters"
+                    class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
+                    >Characters<Files class="ml-2 inline-flex" /></a
+                >
+                <a href="/characters" class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
+                    >Editor<PencilRuler class="ml-2 inline-flex" /></a
+                >
+                <a href="/characters" class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
+                    >User<CircleUserRound class="ml-2 inline-flex" /></a
                 >
             </div>
 
@@ -32,31 +46,22 @@
                 {:else if open}
                     <X />
                 {/if}
-                <!-- <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d={open
-                            ? "M6 18L18 6M6 6l12 12"
-                            : "M4 6h16M4 12h16M4 18h16"}
-                    />
-                </svg> -->
             </button>
         </div>
     </div>
 
     <!-- Mobile Menu -->
     {#if open}
-        <div class="md:hidden px-4 pb-4 space-y-2">
-            <a href="/" class="block hover:text-purple-400">Home</a>
-            <a href="/about" class="block hover:text-purple-400">About</a>
-            <a href="/contact" class="block hover:text-purple-400">Contact</a>
+        <div class="absolute text-right md:hidden px-4 pb-4 space-y-2">
+            <a href="/characters" class="block text-2xl hover:text-purple-400"
+                >Characters<Files class="ml-2 inline-flex" /></a
+            >
+            <a href="/characters" class="block text-2xl hover:text-purple-400"
+                >Editor<PencilRuler class="ml-2 inline-flex" /></a
+            >
+            <a href="/characters" class="block text-2xl hover:text-purple-400"
+                >User<CircleUserRound class="ml-2 inline-flex" /></a
+            >
         </div>
     {/if}
 </nav>
