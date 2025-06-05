@@ -70,7 +70,7 @@
         <!-- <div class="relative"> -->
         <div
             use:clickOutside
-            onoutclick={() => {open = false;}}
+            onoutclick={() => (open = false)}
             transition:fade
             class="absolute bg-neutral-200/90 dark:bg-neutral-900/90 text-left right-0 md:hidden px-5 pb-5 pt-5 space-y-2"
         >
