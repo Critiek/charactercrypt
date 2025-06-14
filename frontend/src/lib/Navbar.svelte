@@ -11,7 +11,7 @@
 
     import { clickOutside } from "./clickOutside";
 
-    let open = false;
+    let open: boolean = false;
 </script>
 
 <nav>
