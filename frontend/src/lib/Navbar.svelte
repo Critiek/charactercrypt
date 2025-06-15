@@ -34,7 +34,7 @@
                         >{name}
                         <svelte:component
                         this={icon}
-                        class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
+                        class="inline-flex text-purple-700 dark:text-purple-400"
                         />
                         </a
                     >
