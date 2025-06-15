@@ -7,6 +7,7 @@
         X,
         CircleUserRound,
         PencilRuler,
+        Component,
     } from "@lucide/svelte";
 
     import { clickOutside } from "./clickOutside";
@@ -27,27 +28,21 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6">
-                <a
-                    href="/characters"
-                    class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                    >Characters<Files
+                {#snippet desktopNav(name: string, href: string, icon: any)}
+                    <a
+                        href={href}
+                        class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
+                        >{name}
+                        <svelte:component
+                        this={icon}
                         class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                    /></a
-                >
-                <a
-                    href="/characters"
-                    class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                    >Editor<PencilRuler
-                        class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                    /></a
-                >
-                <a
-                    href="/characters"
-                    class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                    >User<CircleUserRound
-                        class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                    /></a
-                >
+                        />
+                        </a
+                    >
+                {/snippet}
+                {@render desktopNav("Characters", "/characters", Files)}
+                {@render desktopNav("Editor", "/characters",PencilRuler)}
+                {@render desktopNav("User", "/characters", CircleUserRound)}
             </div>
 
             <!-- Mobile Menu Button -->
@@ -74,27 +69,21 @@
             transition:fade
             class="absolute bg-neutral-200/90 dark:bg-neutral-900/90 text-left right-0 md:hidden px-5 pb-5 pt-5 space-y-2"
         >
-            <a
-                href="/characters"
-                class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                >Characters<Files
+            {#snippet mobileNav(name: string, href: string, icon: any)}
+                <a
+                    href={href}
+                    class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
+                    >{name}
+                    <svelte:component
+                    this={icon}
                     class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                /></a
-            >
-            <a
-                href="/characters"
-                class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                >Editor<PencilRuler
-                    class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                /></a
-            >
-            <a
-                href="/characters"
-                class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                >User<CircleUserRound
-                    class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                /></a
-            >
+                    />
+                    </a
+                >
+            {/snippet}
+            {@render mobileNav("Characters", "/characters", Files)}
+            {@render mobileNav("Editor", "/characters",PencilRuler)}
+            {@render mobileNav("User", "/characters", CircleUserRound)}
         </div>
         <!-- </div> -->
     {/if}
