@@ -7,7 +7,6 @@
         X,
         CircleUserRound,
         PencilRuler,
-        Component,
     } from "@lucide/svelte";
 
     import { clickOutside } from "./clickOutside";
