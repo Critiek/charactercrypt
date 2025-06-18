@@ -1,6 +1,5 @@
 <script lang="ts">
     import { fade } from "svelte/transition";
-
     import {
         Files,
         AlignJustify,
@@ -8,10 +7,16 @@
         CircleUserRound,
         PencilRuler,
     } from "@lucide/svelte";
-
     import { clickOutside } from "./clickOutside";
 
     let open: boolean = false;
+
+    // Combined nav items
+    const navItems = [
+        { name: "Characters", href: "/characters", icon: Files },
+        { name: "Editor", href: "/characters", icon: PencilRuler },
+        { name: "User", href: "/characters", icon: CircleUserRound },
+    ];
 </script>
 
 <nav>
@@ -25,23 +30,20 @@
                 CharacterCrypt
             </a>
 
-            <!-- Desktop Menu -->
+            <!-- Combined Menu -->
             <div class="hidden md:flex space-x-6">
-                {#snippet desktopNav(name: string, href: string, icon: any)}
+                {#each navItems as { name, href, icon }}
                     <a
                         href={href}
-                        class="text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                        >{name}
-                        <svelte:component
-                        this={icon}
-                        class="inline-flex text-purple-700 dark:text-purple-400"
-                        />
-                        </a
+                        class="text-2xl hover:text-purple-700 dark:hover:text-purple-400 flex items-center"
                     >
-                {/snippet}
-                {@render desktopNav("Characters", "/characters", Files)}
-                {@render desktopNav("Editor", "/characters",PencilRuler)}
-                {@render desktopNav("User", "/characters", CircleUserRound)}
+                        {name}
+                        <svelte:component
+                            this={icon}
+                            class="inline-flex ml-2 text-purple-700 dark:text-purple-400"
+                        />
+                    </a>
+                {/each}
             </div>
 
             <!-- Mobile Menu Button -->
@@ -52,7 +54,7 @@
             >
                 {#if !open}
                     <AlignJustify />
-                {:else if open}
+                {:else}
                     <X />
                 {/if}
             </button>
@@ -61,29 +63,24 @@
 
     <!-- Mobile Menu -->
     {#if open}
-        <!-- <div class="relative"> -->
         <div
             use:clickOutside
             onoutclick={() => (open = false)}
             transition:fade
             class="absolute bg-neutral-200/90 dark:bg-neutral-900/90 text-left right-0 md:hidden px-5 pb-5 pt-5 space-y-2"
         >
-            {#snippet mobileNav(name: string, href: string, icon: any)}
+            {#each navItems as { name, href, icon }}
                 <a
                     href={href}
                     class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
-                    >{name}
-                    <svelte:component
-                    this={icon}
-                    class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
-                    />
-                    </a
                 >
-            {/snippet}
-            {@render mobileNav("Characters", "/characters", Files)}
-            {@render mobileNav("Editor", "/characters",PencilRuler)}
-            {@render mobileNav("User", "/characters", CircleUserRound)}
+                    {name}
+                    <svelte:component
+                        this={icon}
+                        class="ml-2 inline-flex text-purple-700 dark:text-purple-400"
+                    />
+                </a>
+            {/each}
         </div>
-        <!-- </div> -->
     {/if}
 </nav>
