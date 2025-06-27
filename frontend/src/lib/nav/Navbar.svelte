@@ -34,7 +34,7 @@
             <div class="hidden md:flex space-x-6">
                 {#each navItems as { name, href, icon }}
                     <a
-                        href={href}
+                        {href}
                         class="text-2xl hover:text-purple-700 dark:hover:text-purple-400 flex items-center"
                     >
                         {name}
@@ -71,7 +71,7 @@
         >
             {#each navItems as { name, href, icon }}
                 <a
-                    href={href}
+                    {href}
                     class="flex items-center justify-between text-2xl hover:text-purple-700 dark:hover:text-purple-400"
                 >
                     {name}
