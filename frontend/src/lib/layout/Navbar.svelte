@@ -35,7 +35,7 @@
                 {#each navItems as { name, href, icon }}
                     <a
                         {href}
-                        class="text-2xl hover:text-purple-700 dark:hover:text-purple-400 flex items-center"
+                        class="border-b-2 text-2xl hover:text-purple-700 dark:hover:text-purple-400 flex items-center"
                     >
                         {name}
                         <svelte:component
@@ -67,7 +67,7 @@
             use:clickOutside
             onoutclick={() => (open = false)}
             transition:fade
-            class="absolute bg-neutral-200/90 dark:bg-neutral-900/90 text-left right-0 md:hidden px-5 pb-5 pt-5 space-y-2"
+            class="absolute border-2 border-purple-700 dark:border-purple-400 bg-neutral-200 dark:bg-neutral-900 text-left right-0 md:hidden px-5 pb-5 pt-5 space-y-2"
         >
             {#each navItems as { name, href, icon }}
                 <a
