@@ -19,12 +19,12 @@
     ];
 </script>
 
-<nav>
+<nav class="font-mono border-b-2 border-purple-700 dark:border-purple-400">
     <div class="max-w-7xl mb-4 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <!-- Logo -->
             <a
-                class="flex-shrink-0 flex items-center text-4xl font-bold text-purple-700 dark:text-purple-400"
+                class="flex-shrink-0 flex items-center text-4xl font-bold text-purple-700 dark:text-purple-400 p-2 border-dotted border-2 border-purple-700 dark:border-purple-400"
                 href="/"
             >
                 CharacterCrypt
