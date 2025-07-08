@@ -9,6 +9,8 @@
 
 <Navbar/>
 
+<div class="max-w-7xl mb-4 mx-auto px-4 sm:px-6 lg:px-8">
 {@render children()}
+</div>
 
 <!-- <Footer/> -->
