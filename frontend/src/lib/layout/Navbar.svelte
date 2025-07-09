@@ -19,7 +19,9 @@
     ];
 </script>
 
-<nav class="font-mono border-b-2 border-purple-700 dark:border-purple-400 mb-12">
+<nav
+    class="font-mono border-b-2 border-purple-700 dark:border-purple-400 mb-12"
+>
     <div class="max-w-7xl mb-4 mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16 items-center">
             <!-- Logo -->
