@@ -5,7 +5,7 @@
         AlignJustify,
         X,
         CircleUserRound,
-        PencilRuler,
+        PenLine,
     } from "@lucide/svelte";
     import { clickOutside } from "./clickOutside";
 
@@ -14,7 +14,7 @@
     // Combined nav items
     const navItems = [
         { name: "Characters", href: "/characters", icon: Files },
-        { name: "Editor", href: "/characters", icon: PencilRuler },
+        { name: "Editor", href: "/characters", icon: PenLine },
         { name: "User", href: "/characters", icon: CircleUserRound },
     ];
 </script>
