@@ -14,8 +14,8 @@
     // Combined nav items
     const navItems = [
         { name: "Characters", href: "/characters", icon: Files },
-        { name: "Editor", href: "/characters", icon: PenLine },
-        { name: "User", href: "/characters", icon: CircleUserRound },
+        { name: "Editor", href: "/editor", icon: PenLine },
+        { name: "User", href: "/user", icon: CircleUserRound },
     ];
 </script>
 
