@@ -5,6 +5,9 @@ declare global {
         interface HTMLAttributes<T> {
             onoutclick?: (event: CustomEvent) => void;
         }
+        interface HTMLAttributes<T> {
+            onclick?: () => void;
+        }
     }
     namespace App {
         // interface Error {}

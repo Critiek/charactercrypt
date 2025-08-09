@@ -15,7 +15,7 @@
     const navItems = [
         { name: "Characters", href: "/characters", icon: Files },
         { name: "Editor", href: "/editor", icon: PenLine },
-        { name: "User", href: "/user", icon: CircleUserRound },
+        { name: "User", href: "/login", icon: CircleUserRound },
     ];
 </script>
 
