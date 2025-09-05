@@ -1,12 +1,20 @@
-use axum::{extract::State, response::IntoResponse};
+use axum::{extract::State, response::IntoResponse, Json};
 use charactercrypt::AppState;
 use rand::{self, rngs::StdRng, Rng, SeedableRng};
+use serde::Deserialize;
 use std::fs;
 
-const WORDLIST_PATH: &str = "eff_short_wordlist_1.txt";
+const WORDLIST_PATH: &str = "resources/authn/eff_short_wordlist_1.txt";
 
-pub async fn handle_code_submissions() {
+#[derive(Deserialize)]
+pub struct MagicCodeSubmission {
+    user: String,
+    magic_code: String,
+}
 
+pub async fn handle_code_submissions(Json(payload): Json<MagicCodeSubmission>) {
+    println!("User: {}", payload.user);
+    println!("Magic Code: {}", payload.magic_code);
 }
 
 pub async fn generate_code(State(app_state): State<AppState>) -> impl IntoResponse {
@@ -21,8 +29,6 @@ pub async fn generate_code(State(app_state): State<AppState>) -> impl IntoRespon
     }
 
     println!("{}", magic_code_words.join("-"));
-
-    axum::http::status::StatusCode::OK
 }
 
 pub fn read_wordlist() -> Vec<String> {
