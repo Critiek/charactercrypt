@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: charactercrypt-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: charactercrypt
+      POSTGRES_USER: charactercrypt
+      POSTGRES_PASSWORD: charactercrypt
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U charactercrypt -d charactercrypt"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
