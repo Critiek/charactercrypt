@@ -21,12 +21,13 @@ async fn main() {
         wordlist: Arc::new(wordlist),
     };
 
-    // build our application with a single route
-    let app = Router::new()
-        .route("/", get(|| async { "Hello, World!" }))
+    let api_routes = Router::new()
         .route("/user/{id}", get(return_id))
-        .route("/code", get(magic_code::generate_code))
-        .route("/submit_code", post(magic_code::handle_code_submissions))
+        .route("/gen_auth_code", get(magic_code::generate_code))
+        .route("/submit_code", post(magic_code::handle_code_submissions));
+
+    let app = Router::new()
+        .nest("/api", api_routes)
         .with_state(app_state)
         .layer(cors);
 
